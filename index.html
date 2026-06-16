@@ -5,28 +5,31 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- SEO: Optimized Title Tag -->
     <title>Manish Magar | Government Officer & Public Administrator | Nepal</title>
-    
+
     <!-- SEO: Meta Description (Crucial for Click-Through Rate) -->
-    <meta name="description" content="Official portfolio of Manish Magar, a dedicated Government Officer in Nepal. Expert in public administration, policy implementation, administrative oversight, and citizen-centric governance.">
-    
+    <meta name="description"
+        content="Official portfolio of Manish Magar, a dedicated Government Officer in Nepal. Expert in public administration, policy implementation, administrative oversight, and citizen-centric governance.">
+
     <!-- SEO: Keywords -->
-    <meta name="keywords" content="Manish Magar, Government Officer Nepal, Public Administration, Civil Servant Nepal, Administrative Officer, Governance Expert, Policy Implementation">
-    
+    <meta name="keywords"
+        content="Manish Magar, Government Officer Nepal, Public Administration, Civil Servant Nepal, Administrative Officer, Governance Expert, Policy Implementation">
+
     <!-- SEO: Author -->
     <meta name="author" content="Manish Magar">
-    
+
     <!-- SEO: Open Graph for Social Media Sharing -->
     <meta property="og:title" content="Manish Magar | Government Officer Portfolio">
-    <meta property="og:description" content="Dedicated Public Servant specializing in administrative excellence and transparent policy implementation in Nepal.">
+    <meta property="og:description"
+        content="Dedicated Public Servant specializing in administrative excellence and transparent policy implementation in Nepal.">
     <meta property="og:image" content="img/banner/home-left-1.png">
     <meta property="og:url" content="https://www.yourwebsite.com">
     <meta property="og:type" content="profile">
 
     <link rel="icon" href="img/favicon.png" type="image/png">
-    
+
     <!-- Bootstrap & Vendor CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -36,7 +39,7 @@
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="vendors/animate-css/animate.css">
     <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
-    
+
     <!-- Core Themes stylesheet architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -97,7 +100,16 @@
             --card-overlay-text-body: #cccccc;
         }
 
-        body, section, footer, div, .feature_item, .projects_item, .projects_text, .testi_item, .navbar, .main_menu {
+        body,
+        section,
+        footer,
+        div,
+        .feature_item,
+        .projects_item,
+        .projects_text,
+        .testi_item,
+        .navbar,
+        .main_menu {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease !important;
         }
 
@@ -119,20 +131,26 @@
         .home_banner_area {
             background-color: var(--bg-secondary) !important;
         }
-        
+
         [data-theme="dark"] .home_banner_area {
             background: var(--bg-secondary) !important;
         }
 
-        .welcome_area, .feature_area, .projects_area, .testimonials_area {
+        .welcome_area,
+        .feature_area,
+        .projects_area,
+        .testimonials_area {
             background-color: var(--bg-primary) !important;
         }
 
-        .main_menu, .navbar, .header_area {
+        .main_menu,
+        .navbar,
+        .header_area {
             background-color: var(--navbar-bg) !important;
         }
 
-        .feature_item, .testi_item {
+        .feature_item,
+        .testi_item {
             background-color: var(--bg-card) !important;
             border: 1px solid var(--border-color) !important;
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.02);
@@ -176,14 +194,25 @@
             margin: 0 !important;
         }
 
-        h1, h2, h3, h4, h5, h6, 
-        .navbar-brand, .nav-link, 
-        .banner_content h5, .banner_content h2,
-        .feature_item h4, .testi_item h4 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand,
+        .nav-link,
+        .banner_content h5,
+        .banner_content h2,
+        .feature_item h4,
+        .testi_item h4 {
             color: var(--text-title) !important;
         }
 
-        p, .banner_content p, .feature_item p, .testi_item p {
+        p,
+        .banner_content p,
+        .feature_item p,
+        .testi_item p {
             color: var(--text-body) !important;
         }
 
@@ -215,12 +244,49 @@
         .theme-toggle-btn:hover {
             background: var(--border-color);
         }
+
+        /* Mobile Profile Image Fix */
+        @media (max-width: 991px) {
+            .home_left_img {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .home_left_img img {
+                max-width: 250px;
+                width: 100%;
+                height: auto;
+                display: inline-block;
+            }
+
+            .banner_content {
+                text-align: center;
+            }
+
+            .home_banner_area .row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Ensure columns show on mobile */
+        @media (max-width: 767px) {
+
+            .col-lg-4,
+            .col-lg-6 {
+                width: 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
     <script>
-        (function() {
+        (function () {
             function getCookie(name) {
                 let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
                 return matches ? decodeURIComponent(matches[1]) : undefined;
@@ -236,7 +302,8 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container box_1620">
                     <!-- SEO: Added aria-label for accessibility -->
-                    <a class="navbar-brand logo_h" href="#home" style="font-weight: 700; letter-spacing: 0.5px;" aria-label="Manish Magar Home">MANISH MAGAR</a>
+                    <a class="navbar-brand logo_h" href="#home" style="font-weight: 700; letter-spacing: 0.5px;"
+                        aria-label="Manish Magar Home">MANISH MAGAR</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -244,7 +311,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    
+
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto align-items-center">
                             <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
@@ -271,18 +338,22 @@
         <div class="banner_inner">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-12 col-lg-4">
                         <div class="home_left_img">
-                            <!-- SEO: Descriptive Alt Text -->
-                            <img src="img/banner/home-left-1.png" alt="Manish Magar, Government Officer of Nepal Official Portrait" width="400" height="400">
+                            <img src="img/banner/home-left-1.png"
+                                alt="Manish Magar, Government Officer of Nepal Official Portrait" width="400"
+                                height="400">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-12 col-lg-6">
                         <div class="banner_content">
                             <h5></h5>
-                            <!-- SEO: H1 is crucial for main keyword -->
                             <h1>Manish Magar</h1>
-                            <p>A committed Government Officer serving the Government of Nepal, dedicated to administrative excellence, transparent policy implementation, and the delivery of impactful civic services. Focused on optimizing institutional efficiency and strengthening the nation's public administration framework through integrity and strategic execution.</p>
+                            <p>A committed Government Officer serving the Government of Nepal, dedicated to
+                                administrative excellence, transparent policy implementation, and the delivery of
+                                impactful civic services. Focused on optimizing institutional efficiency and
+                                strengthening the nation's public administration framework through integrity and
+                                strategic execution.</p>
                         </div>
                     </div>
                 </div>
@@ -299,7 +370,14 @@
                     <div class="welcome_text">
                         <h2>About Me</h2>
                         <p>
-                            As a dedicated Government Officer within the civil service of Nepal, I am driven by a profound commitment to upholding the constitutional mandate of efficient and equitable public administration. My professional journey is anchored in rigorous governance, strategic policy execution, and institutional management. I specialize in streamlining bureaucratic processes, ensuring strict regulatory compliance, and facilitating seamless inter-departmental coordination. By bridging the gap between state mechanisms and citizen needs, I strive to ensure that government initiatives translate into tangible public benefits, maintaining the highest standards of accountability and public trust.
+                            As a dedicated Government Officer within the civil service of Nepal, I am driven by a
+                            profound commitment to upholding the constitutional mandate of efficient and equitable
+                            public administration. My professional journey is anchored in rigorous governance, strategic
+                            policy execution, and institutional management. I specialize in streamlining bureaucratic
+                            processes, ensuring strict regulatory compliance, and facilitating seamless
+                            inter-departmental coordination. By bridging the gap between state mechanisms and citizen
+                            needs, I strive to ensure that government initiatives translate into tangible public
+                            benefits, maintaining the highest standards of accountability and public trust.
                         </p>
                         <div class="row">
                             <div class="col-md-4">
@@ -379,50 +457,69 @@
         <div class="container">
             <div class="main_title">
                 <h2>Education & Professional Training</h2>
-                <p>A comprehensive foundation of academic qualifications and specialized administrative training that underpins my analytical and strategic approach to modern public governance.</p>
+                <p>A comprehensive foundation of academic qualifications and specialized administrative training that
+                    underpins my analytical and strategic approach to modern public governance.</p>
             </div>
 
             <div class="feature_inner row">
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-graduation-cap" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <i class="fa fa-graduation-cap"
+                            style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Bachelor of Science (B.Sc.)</h3>
-                        <p>Developed a strong foundation in analytical reasoning, scientific methodology, and data-driven problem-solving, equipping me to approach complex policy challenges with a logical and evidence-based perspective.</p>
+                        <p>Developed a strong foundation in analytical reasoning, scientific methodology, and
+                            data-driven problem-solving, equipping me to approach complex policy challenges with a
+                            logical and evidence-based perspective.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-book" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <i class="fa fa-book"
+                            style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Higher Secondary Education (+2 Science)</h3>
-                        <p>Established a rigorous academic baseline characterized by strong technical competencies, critical thinking, and comprehensive analytical skills essential for advanced administrative studies.</p>
+                        <p>Established a rigorous academic baseline characterized by strong technical competencies,
+                            critical thinking, and comprehensive analytical skills essential for advanced administrative
+                            studies.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-university" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <i class="fa fa-university"
+                            style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Certification in Public Administration</h3>
-                        <p>Acquired in-depth knowledge of state procedures, administrative law, and local governance dynamics, enabling effective navigation and management of complex bureaucratic frameworks and public sector operations.</p>
+                        <p>Acquired in-depth knowledge of state procedures, administrative law, and local governance
+                            dynamics, enabling effective navigation and management of complex bureaucratic frameworks
+                            and public sector operations.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-folder-open-o" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <i class="fa fa-folder-open-o"
+                            style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Advanced Training in Office Management</h3>
-                        <p>Specialized in bureaucratic efficiency, systematic record management, and strategic resource allocation, focusing on optimizing internal workflows and asset categorization within public sector bureaus.</p>
+                        <p>Specialized in bureaucratic efficiency, systematic record management, and strategic resource
+                            allocation, focusing on optimizing internal workflows and asset categorization within public
+                            sector bureaus.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-comments-o" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <i class="fa fa-comments-o"
+                            style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Stakeholder Engagement & Conflict Resolution</h3>
-                        <p>Trained in inter-agency diplomacy, public grievance redressal, and collaborative policy implementation, fostering productive relationships between government bodies, civil society, and the general public.</p>
+                        <p>Trained in inter-agency diplomacy, public grievance redressal, and collaborative policy
+                            implementation, fostering productive relationships between government bodies, civil society,
+                            and the general public.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-laptop" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <i class="fa fa-laptop"
+                            style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Diploma in E-Governance & Digital Infrastructure</h3>
-                        <p>Gained technical proficiency in digital administrative systems, secure data management, and the integration of modern computing tools to streamline government service delivery and enhance institutional transparency.</p>
+                        <p>Gained technical proficiency in digital administrative systems, secure data management, and
+                            the integration of modern computing tools to streamline government service delivery and
+                            enhance institutional transparency.</p>
                     </div>
                 </div>
             </div>
@@ -435,35 +532,45 @@
         <div class="container">
             <div class="main_title">
                 <h2>Key Operational Milestones</h2>
-                <p>Strategic initiatives and critical administrative functions successfully managed and executed in strict compliance with national governance parameters and institutional objectives.</p>
+                <p>Strategic initiatives and critical administrative functions successfully managed and executed in
+                    strict compliance with national governance parameters and institutional objectives.</p>
             </div>
 
             <div class="projects_inner row">
                 <div class="col-lg-4 col-sm-6">
                     <div class="projects_item">
                         <!-- SEO: Renamed image file suggestion: manish-magar-admin-overight.jpg -->
-                        <img class="img-fluid" src="img/projects/projects-1.jpg" alt="Manish Magar managing strategic administrative oversight in Nepal">
+                        <img class="img-fluid" src="img/projects/projects-1.jpg"
+                            alt="Manish Magar managing strategic administrative oversight in Nepal">
                         <div class="projects_text">
                             <h3>STRATEGIC ADMINISTRATIVE OVERSIGHT</h3>
-                            <p>Spearheaded the restructuring of internal operational workflows, resulting in enhanced resource allocation, reduced processing bottlenecks, and strict adherence to statutory guidelines across daily administrative functions.</p>
+                            <p>Spearheaded the restructuring of internal operational workflows, resulting in enhanced
+                                resource allocation, reduced processing bottlenecks, and strict adherence to statutory
+                                guidelines across daily administrative functions.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="projects_item">
-                        <img class="img-fluid" src="img/projects/projects-2.jpg" alt="Citizen-centric service optimization by Manish Magar">
+                        <img class="img-fluid" src="img/projects/projects-2.jpg"
+                            alt="Citizen-centric service optimization by Manish Magar">
                         <div class="projects_text">
                             <h3>CITIZEN-CENTRIC SERVICE OPTIMIZATION</h3>
-                            <p>Championed initiatives to modernize public service delivery, significantly reducing citizen wait times and establishing transparent, accessible advisory channels to ensure efficient grievance redressal and public support.</p>
+                            <p>Championed initiatives to modernize public service delivery, significantly reducing
+                                citizen wait times and establishing transparent, accessible advisory channels to ensure
+                                efficient grievance redressal and public support.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="projects_item">
-                        <img class="img-fluid" src="img/projects/projects-3.jpg" alt="Records modernization and audit compliance in Nepal government">
+                        <img class="img-fluid" src="img/projects/projects-3.jpg"
+                            alt="Records modernization and audit compliance in Nepal government">
                         <div class="projects_text">
                             <h3>RECORDS MODERNIZATION & AUDIT COMPLIANCE</h3>
-                            <p>Directed the systematic digitization and archival of critical state documents, ensuring absolute compliance with national audit standards and fortifying institutional memory against regulatory scrutiny.</p>
+                            <p>Directed the systematic digitization and archival of critical state documents, ensuring
+                                absolute compliance with national audit standards and fortifying institutional memory
+                                against regulatory scrutiny.</p>
                         </div>
                     </div>
                 </div>
@@ -477,26 +584,33 @@
         <div class="container">
             <div class="main_title">
                 <h2>Core Guiding Principles</h2>
-                <p>The foundational, non-partisan tenets that ensure the balanced, lawful, and ethical execution of civil service duties in modern governance.</p>
+                <p>The foundational, non-partisan tenets that ensure the balanced, lawful, and ethical execution of
+                    civil service duties in modern governance.</p>
             </div>
 
             <div class="testi_inner">
                 <div class="testi_slider owl-carousel">
                     <div class="item">
                         <div class="testi_item">
-                            <p>Upholding absolute neutrality, ethical conduct, and institutional honesty as the bedrock of public trust, ensuring that all administrative actions remain transparent, accountable, and free from partisan influence.</p>
+                            <p>Upholding absolute neutrality, ethical conduct, and institutional honesty as the bedrock
+                                of public trust, ensuring that all administrative actions remain transparent,
+                                accountable, and free from partisan influence.</p>
                             <h3>Uncompromising Integrity & Transparency</h3>
                         </div>
                     </div>
                     <div class="item">
                         <div class="testi_item">
-                            <p>Executing state duties with strict impartiality, ensuring that public resources and services are distributed equitably, prioritizing the welfare of all citizens without bias, discrimination, or prejudice.</p>
+                            <p>Executing state duties with strict impartiality, ensuring that public resources and
+                                services are distributed equitably, prioritizing the welfare of all citizens without
+                                bias, discrimination, or prejudice.</p>
                             <h3>Impartiality & Inclusive Governance</h3>
                         </div>
                     </div>
                     <div class="item">
                         <div class="testi_item">
-                            <p>Committing to lifelong learning and the continuous modernization of administrative practices, leveraging emerging technologies and updated policy frameworks to enhance the efficacy and reach of public governance systems.</p>
+                            <p>Committing to lifelong learning and the continuous modernization of administrative
+                                practices, leveraging emerging technologies and updated policy frameworks to enhance the
+                                efficacy and reach of public governance systems.</p>
                             <h3>Continuous Capacity Building & Innovation</h3>
                         </div>
                     </div>
@@ -515,8 +629,13 @@
                         <div class="f_title">
                             <h3>Official Profile Summary</h3>
                         </div>
-                        <p>Manish Magar is a dedicated civil servant in the Government of Nepal, committed to fostering transparent, efficient, and citizen-centric public administration. This portfolio reflects a steadfast dedication to national service, regulatory compliance, and institutional excellence.</p>
-                        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> | Official Registry Portfolio.</p>
+                        <p>Manish Magar is a dedicated civil servant in the Government of Nepal, committed to fostering
+                            transparent, efficient, and citizen-centric public administration. This portfolio reflects a
+                            steadfast dedication to national service, regulatory compliance, and institutional
+                            excellence.</p>
+                        <p>Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> | Official Registry Portfolio.
+                        </p>
                     </aside>
                 </div>
 
@@ -598,7 +717,7 @@
             toggleBtn.addEventListener("click", function () {
                 const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
                 const targetTheme = currentTheme === "light" ? "dark" : "light";
-                
+
                 document.documentElement.setAttribute("data-theme", targetTheme);
                 setCookie("portfolio_theme", targetTheme);
                 updateToggleUI(targetTheme);
