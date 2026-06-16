@@ -156,6 +156,156 @@
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.02);
         }
 
+        /* ========== CLICKABLE EDUCATION CARDS ========== */
+        .feature_item.clickable {
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease !important;
+        }
+
+        .feature_item.clickable:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+            border-color: var(--accent-color) !important;
+        }
+
+        .feature_item.clickable::after {
+            content: "\f05a";
+            font-family: FontAwesome;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 14px;
+            color: var(--accent-color);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature_item.clickable:hover::after {
+            opacity: 1;
+        }
+
+        .click-hint {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            margin-top: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ========== EDUCATION DETAIL MODAL STYLING ========== */
+        .edu-modal .modal-content {
+            background-color: var(--bg-card) !important;
+            color: var(--text-body) !important;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .edu-modal .modal-header {
+            background: linear-gradient(135deg, var(--accent-color), #2c3e50);
+            color: #ffffff !important;
+            border-bottom: none;
+            padding: 25px 30px;
+        }
+
+        .edu-modal .modal-header .modal-title {
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .edu-modal .modal-header .close {
+            color: #ffffff !important;
+            opacity: 0.9;
+            text-shadow: none;
+        }
+
+        .edu-modal .modal-header .close:hover {
+            opacity: 1;
+        }
+
+        .edu-modal .modal-body {
+            padding: 30px;
+        }
+
+        .edu-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .edu-detail-item {
+            padding: 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .edu-detail-item .label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .edu-detail-item .value {
+            font-size: 1rem;
+            color: var(--text-title) !important;
+            font-weight: 600;
+        }
+
+        .edu-description {
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            line-height: 1.7;
+            color: var(--text-body) !important;
+        }
+
+        .edu-description h5 {
+            color: var(--text-title) !important;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .edu-modal .modal-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 15px 30px;
+        }
+
+        .edu-modal .modal-footer .btn-close-modal {
+            background: var(--accent-color);
+            color: #ffffff !important;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .edu-modal .modal-footer .btn-close-modal:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 576px) {
+            .edu-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== END EDUCATION MODAL STYLING ========== */
+
         .projects_item {
             position: relative;
             overflow: hidden;
@@ -301,7 +451,6 @@
         <div class="main_menu" id="mainNav">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container box_1620">
-                    <!-- SEO: Added aria-label for accessibility -->
                     <a class="navbar-brand logo_h" href="#home" style="font-weight: 700; letter-spacing: 0.5px;"
                         aria-label="Manish Magar Home">MANISH MAGAR</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -458,74 +607,401 @@
             <div class="main_title">
                 <h2>Education & Professional Training</h2>
                 <p>A comprehensive foundation of academic qualifications and specialized administrative training that
-                    underpins my analytical and strategic approach to modern public governance.</p>
+                    underpins my analytical and strategic approach to modern public governance. <em style="color: var(--accent-color);">Click on any card to view detailed information.</em></p>
             </div>
 
             <div class="feature_inner row">
+                <!-- B.Sc. Card - Clickable -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
+                    <div class="feature_item clickable" data-toggle="modal" data-target="#eduModal1" role="button" tabindex="0" aria-label="View details of Bachelor of Science">
                         <i class="fa fa-graduation-cap"
                             style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Bachelor of Science (B.Sc.)</h3>
                         <p>Developed a strong foundation in analytical reasoning, scientific methodology, and
                             data-driven problem-solving, equipping me to approach complex policy challenges with a
                             logical and evidence-based perspective.</p>
+                        <span class="click-hint">Click for details →</span>
                     </div>
                 </div>
+
+                <!-- +2 Science Card - Clickable -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
+                    <div class="feature_item clickable" data-toggle="modal" data-target="#eduModal2" role="button" tabindex="0" aria-label="View details of Higher Secondary Education">
                         <i class="fa fa-book"
                             style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Higher Secondary Education (+2 Science)</h3>
                         <p>Established a rigorous academic baseline characterized by strong technical competencies,
                             critical thinking, and comprehensive analytical skills essential for advanced administrative
                             studies.</p>
+                        <span class="click-hint">Click for details →</span>
                     </div>
                 </div>
+
+                <!-- Public Admin Certification Card - Clickable -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
+                    <div class="feature_item clickable" data-toggle="modal" data-target="#eduModal3" role="button" tabindex="0" aria-label="View details of Certification in Public Administration">
                         <i class="fa fa-university"
                             style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Certification in Public Administration</h3>
                         <p>Acquired in-depth knowledge of state procedures, administrative law, and local governance
                             dynamics, enabling effective navigation and management of complex bureaucratic frameworks
                             and public sector operations.</p>
+                        <span class="click-hint">Click for details →</span>
                     </div>
                 </div>
+
+                <!-- Office Management Card - Clickable -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
+                    <div class="feature_item clickable" data-toggle="modal" data-target="#eduModal4" role="button" tabindex="0" aria-label="View details of Advanced Training in Office Management">
                         <i class="fa fa-folder-open-o"
                             style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Advanced Training in Office Management</h3>
                         <p>Specialized in bureaucratic efficiency, systematic record management, and strategic resource
                             allocation, focusing on optimizing internal workflows and asset categorization within public
                             sector bureaus.</p>
+                        <span class="click-hint">Click for details →</span>
                     </div>
                 </div>
+
+                <!-- Stakeholder Engagement Card - Clickable -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
+                    <div class="feature_item clickable" data-toggle="modal" data-target="#eduModal5" role="button" tabindex="0" aria-label="View details of Stakeholder Engagement Training">
                         <i class="fa fa-comments-o"
                             style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Stakeholder Engagement & Conflict Resolution</h3>
                         <p>Trained in inter-agency diplomacy, public grievance redressal, and collaborative policy
                             implementation, fostering productive relationships between government bodies, civil society,
                             and the general public.</p>
+                        <span class="click-hint">Click for details →</span>
                     </div>
                 </div>
+
+                <!-- E-Governance Card - Clickable -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature_item">
+                    <div class="feature_item clickable" data-toggle="modal" data-target="#eduModal6" role="button" tabindex="0" aria-label="View details of Diploma in E-Governance">
                         <i class="fa fa-laptop"
                             style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h3>Diploma in E-Governance & Digital Infrastructure</h3>
                         <p>Gained technical proficiency in digital administrative systems, secure data management, and
                             the integration of modern computing tools to streamline government service delivery and
                             enhance institutional transparency.</p>
+                        <span class="click-hint">Click for details →</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--================End Feature Area =================-->
+
+    <!--================EDUCATION DETAIL MODALS =================-->
+    
+    <!-- Modal 1: B.Sc. -->
+    <div class="modal fade edu-modal" id="eduModal1" tabindex="-1" role="dialog" aria-labelledby="eduModal1Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eduModal1Title">
+                        <i class="fa fa-graduation-cap"></i> Bachelor of Science (B.Sc.)
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="edu-detail-grid">
+                        <div class="edu-detail-item">
+                            <span class="label">Year of Completion</span>
+                            <span class="value">2012</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Division / Grade</span>
+                            <span class="value">First Division</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">University / Board</span>
+                            <span class="value">Tribhuvan University</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">College / Institution</span>
+                            <span class="value">[Your College Name]</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Major / Specialization</span>
+                            <span class="value">Computer Science / Physics</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Duration</span>
+                            <span class="value">4 Years (Full-Time)</span>
+                        </div>
+                    </div>
+                    <div class="edu-description">
+                        <h5>Key Learnings & Relevance</h5>
+                        <p>Completed a rigorous four-year undergraduate program emphasizing analytical reasoning, scientific methodology, and data-driven problem-solving. The curriculum cultivated a logical approach to complex challenges, which directly translates to evidence-based policy analysis and administrative decision-making in public service.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: +2 Science -->
+    <div class="modal fade edu-modal" id="eduModal2" tabindex="-1" role="dialog" aria-labelledby="eduModal2Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eduModal2Title">
+                        <i class="fa fa-book"></i> Higher Secondary Education (+2 Science)
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="edu-detail-grid">
+                        <div class="edu-detail-item">
+                            <span class="label">Year of Completion</span>
+                            <span class="value">2008</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">GPA / Percentage</span>
+                            <span class="value">3.45 GPA / 78%</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Board</span>
+                            <span class="value">NEB (National Examination Board)</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">College</span>
+                            <span class="value">[Your College Name]</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Stream</span>
+                            <span class="value">Science (Physics, Chemistry, Mathematics)</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Duration</span>
+                            <span class="value">2 Years (Full-Time)</span>
+                        </div>
+                    </div>
+                    <div class="edu-description">
+                        <h5>Key Learnings & Relevance</h5>
+                        <p>Established a rigorous academic baseline with strong technical competencies in scientific disciplines. The analytical mindset and quantitative reasoning developed during this period formed the foundation for advanced studies and evidence-based administrative work.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Public Administration Certification -->
+    <div class="modal fade edu-modal" id="eduModal3" tabindex="-1" role="dialog" aria-labelledby="eduModal3Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eduModal3Title">
+                        <i class="fa fa-university"></i> Certification in Public Administration
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="edu-detail-grid">
+                        <div class="edu-detail-item">
+                            <span class="label">Year of Completion</span>
+                            <span class="value">2014</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Grade / Status</span>
+                            <span class="value">Distinction</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Institution</span>
+                            <span class="value">Nepal Administrative Staff College (NAS C)</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Program Type</span>
+                            <span class="value">Professional Certification</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Duration</span>
+                            <span class="value">6 Months</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Certification No.</span>
+                            <span class="value">[Your Certificate Number]</span>
+                        </div>
+                    </div>
+                    <div class="edu-description">
+                        <h5>Key Learnings & Relevance</h5>
+                        <p>Acquired in-depth knowledge of state procedures, administrative law, constitutional governance, and local government dynamics. The program provided practical frameworks for navigating complex bureaucratic structures and implementing public policy effectively at both federal and provincial levels.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Office Management Training -->
+    <div class="modal fade edu-modal" id="eduModal4" tabindex="-1" role="dialog" aria-labelledby="eduModal4Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eduModal4Title">
+                        <i class="fa fa-folder-open-o"></i> Advanced Training in Office Management
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="edu-detail-grid">
+                        <div class="edu-detail-item">
+                            <span class="label">Year of Completion</span>
+                            <span class="value">2016</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Status</span>
+                            <span class="value">Successfully Completed</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Training Provider</span>
+                            <span class="value">Office of the Prime Minister & Council of Ministers</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Program Type</span>
+                            <span class="value">In-Service Training</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Duration</span>
+                            <span class="value">45 Days</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Certificate</span>
+                            <span class="value">Verified (Govt. of Nepal)</span>
+                        </div>
+                    </div>
+                    <div class="edu-description">
+                        <h5>Key Learnings & Relevance</h5>
+                        <p>Specialized training covering bureaucratic efficiency, systematic record management (Chalani & Nipujari systems), strategic resource allocation, and file management protocols. The program significantly enhanced capabilities in optimizing internal workflows and maintaining audit-ready documentation within public sector bureaus.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Stakeholder Engagement -->
+    <div class="modal fade edu-modal" id="eduModal5" tabindex="-1" role="dialog" aria-labelledby="eduModal5Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eduModal5Title">
+                        <i class="fa fa-comments-o"></i> Stakeholder Engagement & Conflict Resolution
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="edu-detail-grid">
+                        <div class="edu-detail-item">
+                            <span class="label">Year of Completion</span>
+                            <span class="value">2018</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Status</span>
+                            <span class="value">Completed with Merit</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Institution</span>
+                            <span class="value">Local Governance Training Academy</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Program Type</span>
+                            <span class="value">Capacity Building Workshop</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Duration</span>
+                            <span class="value">15 Days Intensive</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Facilitators</span>
+                            <span class="value">Senior Government Secretaries</span>
+                        </div>
+                    </div>
+                    <div class="edu-description">
+                        <h5>Key Learnings & Relevance</h5>
+                        <p>Comprehensive training in inter-agency diplomacy, public grievance redressal mechanisms, collaborative policy implementation, and community engagement strategies. Equipped with practical tools for fostering productive relationships between government bodies, civil society organizations, and the general public.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: E-Governance Diploma -->
+    <div class="modal fade edu-modal" id="eduModal6" tabindex="-1" role="dialog" aria-labelledby="eduModal6Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eduModal6Title">
+                        <i class="fa fa-laptop"></i> Diploma in E-Governance & Digital Infrastructure
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="edu-detail-grid">
+                        <div class="edu-detail-item">
+                            <span class="label">Year of Completion</span>
+                            <span class="value">2020</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Grade</span>
+                            <span class="value">A Grade</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Institution</span>
+                            <span class="value">Ministry of Communication and Information Technology</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Program Type</span>
+                            <span class="value">Professional Diploma</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Duration</span>
+                            <span class="value">3 Months</span>
+                        </div>
+                        <div class="edu-detail-item">
+                            <span class="label">Key Tools Covered</span>
+                            <span class="value">SUTRA, LMBIS, ANIS</span>
+                        </div>
+                    </div>
+                    <div class="edu-description">
+                        <h5>Key Learnings & Relevance</h5>
+                        <p>Gained technical proficiency in digital administrative systems including the Social Welfare Council's SUTRA, Local Body Management Information System (LMBIS), and Integrated Administrative Information System (ANIS). The program focused on secure data management, digital service delivery, and modern computing tools that streamline government operations and enhance institutional transparency.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--================END EDUCATION DETAIL MODALS =================-->
 
     <!--================Projects Area =================-->
     <section class="projects_area p_120" id="highlights">
@@ -539,7 +1015,6 @@
             <div class="projects_inner row">
                 <div class="col-lg-4 col-sm-6">
                     <div class="projects_item">
-                        <!-- SEO: Renamed image file suggestion: manish-magar-admin-overight.jpg -->
                         <img class="img-fluid" src="img/projects/projects-1.jpg"
                             alt="Manish Magar managing strategic administrative oversight in Nepal">
                         <div class="projects_text">
@@ -650,19 +1125,6 @@
                         </div>
                     </aside>
                 </div>
-
-                <!-- <div class="col-lg-2">
-                    <aside class="f_widget social_widget">
-                        <div class="f_title">
-                            <h3>Verified Channels</h3>
-                        </div>
-                        <p>Institutional connection portals:</p>
-                        <ul class="list">
-                            <li><a href="#" rel="nofollow noopener" aria-label="LinkedIn Profile"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-                            <li><a href="#" rel="nofollow noopener" aria-label="Government Mail"><i class="fa fa-envelope"></i> Government Mail</a></li>
-                        </ul>
-                    </aside>
-                </div> -->
             </div>
         </div>
     </footer>
@@ -721,6 +1183,17 @@
                 document.documentElement.setAttribute("data-theme", targetTheme);
                 setCookie("portfolio_theme", targetTheme);
                 updateToggleUI(targetTheme);
+            });
+
+            // ========== EDUCATION CARD KEYBOARD ACCESSIBILITY ==========
+            // Allow Enter/Space key to open modal when card is focused
+            document.querySelectorAll('.feature_item.clickable').forEach(function(card) {
+                card.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
             });
         });
     </script>
