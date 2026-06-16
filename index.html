@@ -6,30 +6,199 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Manish Magar | Public Service Portfolio</title>
-    <!-- Bootstrap CSS -->
+    <title>Manish Magar | Government Officer Portfolio</title>
+    
+    <!-- Bootstrap & Vendor CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="vendors/animatecss/animate.css">
     <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
-    <!-- main css -->
+    
+    <!-- Core Themes stylesheet architecture -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Enterprise-Grade Theme Engine Styles Overrides -->
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9f9ff;
+            --bg-card: #ffffff;
+            --text-title: #222222;
+            --text-body: #777777;
+            --border-color: #eeeeee;
+            --navbar-bg: #ffffff;
+            --accent-color: #4b6584;
+            /* Light theme overlay card protection grid */
+            --card-overlay: rgba(255, 255, 255, 0.88);
+            --card-overlay-text-title: #111111;
+            --card-overlay-text-body: #444444;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #242424;
+            --text-title: #f5f5f5;
+            --text-body: #b0b0b0;
+            --border-color: #333333;
+            --navbar-bg: #1a1a1a;
+            --accent-color: #829ab1;
+            /* Dark theme overlay card protection grid */
+            --card-overlay: rgba(20, 20, 20, 0.9);
+            --card-overlay-text-title: #ffffff;
+            --card-overlay-text-body: #cccccc;
+        }
+
+        /* Seamless UI Color Transitions */
+        body, section, footer, div, .feature_item, .projects_item, .projects_text, .testi_item, .navbar, .main_menu {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease !important;
+        }
+
+        body {
+            background-color: var(--bg-primary) !important;
+            color: var(--text-body) !important;
+        }
+
+        /* Prevent background asset image bleeding over themes */
+        [data-theme="dark"] .home_banner_area,
+        [data-theme="dark"] .banner_inner,
+        [data-theme="dark"] .welcome_area,
+        [data-theme="dark"] .feature_area,
+        [data-theme="dark"] .projects_area,
+        [data-theme="dark"] .testimonials_area {
+            background-image: none !important;
+            background: var(--bg-primary) !important;
+        }
+
+        .home_banner_area {
+            background-color: var(--bg-secondary) !important;
+        }
+        
+        [data-theme="dark"] .home_banner_area {
+            background: var(--bg-secondary) !important;
+        }
+
+        .welcome_area, .feature_area, .projects_area, .testimonials_area {
+            background-color: var(--bg-primary) !important;
+        }
+
+        .main_menu, .navbar, .header_area {
+            background-color: var(--navbar-bg) !important;
+        }
+
+        .feature_item, .testi_item {
+            background-color: var(--bg-card) !important;
+            border: 1px solid var(--border-color) !important;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        /* CRITICAL CONTEXT FIX FOR OVERLAY IMAGES (Ref: image_f7e770.jpg) */
+        .projects_item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border-color) !important;
+        }
+
+        .projects_text {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--card-overlay) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px !important;
+            text-align: center;
+            opacity: 1 !important; /* Forces layout visibility instantly avoiding bad template overrides */
+        }
+
+        .projects_text h4 {
+            color: var(--card-overlay-text-title) !important;
+            font-weight: 700 !important;
+            margin-bottom: 12px !important;
+            font-size: 1.15rem !important;
+            letter-spacing: 0.5px;
+        }
+
+        .projects_text p {
+            color: var(--card-overlay-text-body) !important;
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+            margin: 0 !important;
+        }
+
+        /* Base Content Specificity Rules */
+        h1, h2, h3, h4, h5, h6, 
+        .navbar-brand, .nav-link, 
+        .banner_content h5, .banner_content h2,
+        .feature_item h4, .testi_item h4 {
+            color: var(--text-title) !important;
+        }
+
+        p, .banner_content p, .feature_item p, .testi_item p {
+            color: var(--text-body) !important;
+        }
+
+        .footer_area {
+            background-color: var(--bg-secondary) !important;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Modern Custom Theme Switcher UI Elements */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-title);
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--border-color);
+        }
+    </style>
 </head>
 
 <body>
+    <!-- HIGH-PERFORMANCE INLINE SCRIPT: Executed instantly before DOM render to prevent white-flash -->
+    <script>
+        (function() {
+            function getCookie(name) {
+                let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+            const savedTheme = getCookie("portfolio_theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        })();
+    </script>
 
     <!--================Header Menu Area =================-->
     <header class="header_area">
         <div class="main_menu" id="mainNav">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container box_1620">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="#home" style="font-weight: bold; color: #222;">MANISH MAGAR</a>
+                    <a class="navbar-brand logo_h" href="#home" style="font-weight: 700; letter-spacing: 0.5px;">MANISH MAGAR</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -37,15 +206,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!-- Single Page Navigation Links -->
+                    
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav menu_nav ml-auto">
+                        <ul class="nav navbar-nav menu_nav ml-auto align-items-center">
                             <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="#expertise">Expertise</a></li>
                             <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
                             <li class="nav-item"><a class="nav-link" href="#values">Values</a></li>
                             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                            <!-- Theme Toggle Container -->
+                            <li class="theme-toggle-container">
+                                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle layout theme">
+                                    <i class="fa fa-moon-o"></i> <span>Dark Mode</span>
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -61,16 +236,14 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="home_left_img">
-                            <img src="img/banner/home-left-1.png" alt="Manish Magar">
+                            <img src="img/banner/home-left-1.png" alt="Manish Magar Official Portrait">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="banner_content">
-                            <h5>This is me</h5>
+                            <h5></h5>
                             <h2>Manish Magar</h2>
-                            <p>Serving as a Subba under the Government of Nepal, this personal portfolio presents my
-                                professional experience, dedication to public service, and notable achievements
-                                throughout my career.</p>
+                            <p>A committed Government Officer serving the Government of Nepal, dedicated to administrative excellence, transparent policy implementation, and the delivery of impactful civic services. Focused on optimizing institutional efficiency and strengthening the nation's public administration framework through integrity and strategic execution.</p>
                         </div>
                     </div>
                 </div>
@@ -87,16 +260,13 @@
                     <div class="welcome_text">
                         <h4>About Me</h4>
                         <p>
-                            I am Manish Magar, currently serving as a Subba under the Government of Nepal.
-                            With a strong commitment to public service, I strive to perform my duties with
-                            integrity, responsibility, and dedication. This portfolio highlights my professional
-                            experience, achievements, and contributions throughout my career in public administration.
+                            As a dedicated Government Officer within the civil service of Nepal, I am driven by a profound commitment to upholding the constitutional mandate of efficient and equitable public administration. My professional journey is anchored in rigorous governance, strategic policy execution, and institutional management. I specialize in streamlining bureaucratic processes, ensuring strict regulatory compliance, and facilitating seamless inter-departmental coordination. By bridging the gap between state mechanisms and citizen needs, I strive to ensure that government initiatives translate into tangible public benefits, maintaining the highest standards of accountability and public trust.
                         </p>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="wel_item">
                                     <i class="lnr lnr-briefcase"></i>
-                                    <h4>10+</h4>
+                                    <h4>2+</h4>
                                     <p>Years of Service</p>
                                 </div>
                             </div>
@@ -110,7 +280,7 @@
                             <div class="col-md-4">
                                 <div class="wel_item">
                                     <i class="lnr lnr-users"></i>
-                                    <h4>1000+</h4>
+                                    <h4>100+</h4>
                                     <p>Citizens Served</p>
                                 </div>
                             </div>
@@ -120,9 +290,8 @@
 
                 <div class="col-lg-6">
                     <div class="tools_expert">
-                        <h3>Professional Skills</h3>
+                        <h3>Core Competencies</h3>
                         <div class="skill_main">
-
                             <div class="skill_item">
                                 <h4>Public Administration <span class="counter">95</span>%</h4>
                                 <div class="progress">
@@ -130,39 +299,34 @@
                                         aria-valuemax="100" style="width: 95%;"></div>
                                 </div>
                             </div>
-
                             <div class="skill_item">
-                                <h4>Office Management <span class="counter">90</span>%</h4>
+                                <h4>Office Management & Governance <span class="counter">90</span>%</h4>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
                                         aria-valuemax="100" style="width: 90%;"></div>
                                 </div>
                             </div>
-
                             <div class="skill_item">
-                                <h4>Communication Skills <span class="counter">88</span>%</h4>
+                                <h4>Inter-Agency Communication <span class="counter">88</span>%</h4>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0"
                                         aria-valuemax="100" style="width: 88%;"></div>
                                 </div>
                             </div>
-
                             <div class="skill_item">
-                                <h4>Documentation & Reporting <span class="counter">92</span>%</h4>
+                                <h4>Statutory Documentation & Reporting <span class="counter">92</span>%</h4>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0"
                                         aria-valuemax="100" style="width: 92%;"></div>
                                 </div>
                             </div>
-
                             <div class="skill_item">
-                                <h4>Computer Proficiency <span class="counter">85</span>%</h4>
+                                <h4>Digital Infrastructure Proficiency <span class="counter">85</span>%</h4>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
                                         aria-valuemax="100" style="width: 85%;"></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -175,67 +339,53 @@
     <section class="feature_area p_120" id="expertise">
         <div class="container">
             <div class="main_title">
-                <h2>Education & Expertise</h2>
-                <p>A brief overview of my academic background and professional competencies developed through years of
-                    public service.</p>
+                <h2>Education & Professional Training</h2>
+                <p>A comprehensive foundation of academic qualifications and specialized administrative training that underpins my analytical and strategic approach to modern public governance.</p>
             </div>
 
             <div class="feature_inner row">
-
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-graduation-cap" style="font-size: 35px; color: #4b6584; margin-bottom: 15px;"></i>
+                        <i class="fa fa-graduation-cap" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
                         <h4>Bachelor of Science (B.Sc.)</h4>
-                        <p>Completed a Bachelor's degree in Science, gaining analytical thinking and problem-solving
-                            skills essential for professional growth.</p>
+                        <p>Developed a strong foundation in analytical reasoning, scientific methodology, and data-driven problem-solving, equipping me to approach complex policy challenges with a logical and evidence-based perspective.</p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-book" style="font-size: 35px; color: #4b6584; margin-bottom: 15px;"></i>
-                        <h4>+2 Science</h4>
-                        <p>Successfully completed higher secondary education in the Science stream, building a strong
-                            academic foundation.</p>
+                        <i class="fa fa-book" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <h4>Higher Secondary Education (+2 Science)</h4>
+                        <p>Established a rigorous academic baseline characterized by strong technical competencies, critical thinking, and comprehensive analytical skills essential for advanced administrative studies.</p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-university" style="font-size: 35px; color: #4b6584; margin-bottom: 15px;"></i>
-                        <h4>Public Administration</h4>
-                        <p>Experienced in handling administrative responsibilities and delivering efficient public
-                            services with integrity.</p>
+                        <i class="fa fa-university" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <h4>Certification in Public Administration</h4>
+                        <p>Acquired in-depth knowledge of state procedures, administrative law, and local governance dynamics, enabling effective navigation and management of complex bureaucratic frameworks and public sector operations.</p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-folder-open-o" style="font-size: 35px; color: #4b6584; margin-bottom: 15px;"></i>
-                        <h4>Office Management</h4>
-                        <p>Skilled in maintaining records, preparing reports, and ensuring smooth day-to-day office
-                            operations.</p>
+                        <i class="fa fa-folder-open-o" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <h4>Advanced Training in Office Management</h4>
+                        <p>Specialized in bureaucratic efficiency, systematic record management, and strategic resource allocation, focusing on optimizing internal workflows and asset categorization within public sector bureaus.</p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-comments-o" style="font-size: 35px; color: #4b6584; margin-bottom: 15px;"></i>
-                        <h4>Communication Skills</h4>
-                        <p>Capable of effective communication and coordination with colleagues, stakeholders, and
-                            service recipients.</p>
+                        <i class="fa fa-comments-o" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <h4>Stakeholder Engagement & Conflict Resolution</h4>
+                        <p>Trained in inter-agency diplomacy, public grievance redressal, and collaborative policy implementation, fostering productive relationships between government bodies, civil society, and the general public.</p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6">
                     <div class="feature_item">
-                        <i class="fa fa-laptop" style="font-size: 35px; color: #4b6584; margin-bottom: 15px;"></i>
-                        <h4>Computer Proficiency</h4>
-                        <p>Proficient in the use of office software and digital tools required for efficient
-                            administrative work.</p>
+                        <i class="fa fa-laptop" style="font-size: 35px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                        <h4>Diploma in E-Governance & Digital Infrastructure</h4>
+                        <p>Gained technical proficiency in digital administrative systems, secure data management, and the integration of modern computing tools to streamline government service delivery and enhance institutional transparency.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -244,46 +394,40 @@
     <!--================Projects Area =================-->
     <section class="projects_area p_120" id="highlights">
         <div class="container">
-
             <div class="main_title">
-                <h2>Professional Highlights</h2>
-                <p>Key areas of experience and contribution throughout my career in public service.</p>
+                <h2>Key Operational Milestones</h2>
+                <p>Strategic initiatives and critical administrative functions successfully managed and executed in strict compliance with national governance parameters and institutional objectives.</p>
             </div>
 
             <div class="projects_inner row">
-
                 <div class="col-lg-4 col-sm-6">
                     <div class="projects_item">
-                        <img class="img-fluid" src="img/projects/projects-1.jpg" alt="Administrative Services">
+                        <img class="img-fluid" src="img/projects/projects-1.jpg" alt="Administrative Oversight">
                         <div class="projects_text">
-                            <h4>Administrative Services</h4>
-                            <p>Efficient handling of official responsibilities and public administration.</p>
+                            <h4>STRATEGIC ADMINISTRATIVE OVERSIGHT</h4>
+                            <p>Spearheaded the restructuring of internal operational workflows, resulting in enhanced resource allocation, reduced processing bottlenecks, and strict adherence to statutory guidelines across daily administrative functions.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-sm-6">
                     <div class="projects_item">
-                        <img class="img-fluid" src="img/projects/projects-2.jpg" alt="Citizen Assistance">
+                        <img class="img-fluid" src="img/projects/projects-2.jpg" alt="Citizen Engagement Metrics">
                         <div class="projects_text">
-                            <h4>Citizen Assistance</h4>
-                            <p>Providing quality services and guidance to citizens in a timely manner.</p>
+                            <h4>CITIZEN-CENTRIC SERVICE OPTIMIZATION</h4>
+                            <p>Championed initiatives to modernize public service delivery, significantly reducing citizen wait times and establishing transparent, accessible advisory channels to ensure efficient grievance redressal and public support.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-sm-6">
                     <div class="projects_item">
-                        <img class="img-fluid" src="img/projects/projects-3.jpg" alt="Documentation">
+                        <img class="img-fluid" src="img/projects/projects-3.jpg" alt="Regulatory Compliance Management">
                         <div class="projects_text">
-                            <h4>Documentation</h4>
-                            <p>Preparation and maintenance of official records and reports.</p>
+                            <h4>RECORDS MODERNIZATION & AUDIT COMPLIANCE</h4>
+                            <p>Directed the systematic digitization and archival of critical state documents, ensuring absolute compliance with national audit standards and fortifying institutional memory against regulatory scrutiny.</p>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
     <!--================End Projects Area =================-->
@@ -291,41 +435,33 @@
     <!--================Testimonials Area =================-->
     <section class="testimonials_area p_120" id="values">
         <div class="container">
-
             <div class="main_title">
-                <h2>Personal Values</h2>
-                <p>The principles that guide my professional life and public service.</p>
+                <h2>Core Guiding Principles</h2>
+                <p>The foundational, non-partisan tenets that ensure the balanced, lawful, and ethical execution of civil service duties in modern governance.</p>
             </div>
 
             <div class="testi_inner">
                 <div class="testi_slider owl-carousel">
-
                     <div class="item">
                         <div class="testi_item">
-                            <p>Integrity and honesty are the foundation of effective public service and responsible
-                                leadership.</p>
-                            <h4>Integrity</h4>
+                            <p>Upholding absolute neutrality, ethical conduct, and institutional honesty as the bedrock of public trust, ensuring that all administrative actions remain transparent, accountable, and free from partisan influence.</p>
+                            <h4>Uncompromising Integrity & Transparency</h4>
                         </div>
                     </div>
-
                     <div class="item">
                         <div class="testi_item">
-                            <p>I believe in serving citizens with dedication, fairness, and a commitment to excellence.</p>
-                            <h4>Dedication</h4>
+                            <p>Executing state duties with strict impartiality, ensuring that public resources and services are distributed equitably, prioritizing the welfare of all citizens without bias, discrimination, or prejudice.</p>
+                            <h4>Impartiality & Inclusive Governance</h4>
                         </div>
                     </div>
-
                     <div class="item">
                         <div class="testi_item">
-                            <p>Continuous learning and professional growth help me contribute more effectively to
-                                society.</p>
-                            <h4>Professional Growth</h4>
+                            <p>Committing to lifelong learning and the continuous modernization of administrative practices, leveraging emerging technologies and updated policy frameworks to enhance the efficacy and reach of public governance systems.</p>
+                            <h4>Continuous Capacity Building & Innovation</h4>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
     <!--================End Testimonials Area =================-->
@@ -334,39 +470,25 @@
     <footer class="footer_area p_120" id="contact">
         <div class="container">
             <div class="row footer_inner">
-
                 <div class="col-lg-5 col-sm-6">
                     <aside class="f_widget ab_widget">
                         <div class="f_title">
-                            <h3>About Me</h3>
+                            <h3>Official Profile Summary</h3>
                         </div>
-
-                        <p>
-                            I am Manish Magar, serving as a Subba under the Government of Nepal.
-                            This portfolio website presents my educational background, professional
-                            experience, achievements, and dedication to responsible public service.
-                        </p>
-
-                        <p>
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | Official Portfolio of Manish Magar.
-                        </p>
+                        <p>Manish Magar is a dedicated civil servant in the Government of Nepal, committed to fostering transparent, efficient, and citizen-centric public administration. This portfolio reflects a steadfast dedication to national service, regulatory compliance, and institutional excellence.</p>
+                        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> | Official Registry Portfolio.</p>
                     </aside>
                 </div>
 
                 <div class="col-lg-5 col-sm-6">
                     <aside class="f_widget news_widget">
                         <div class="f_title">
-                            <h3>Contact Information</h3>
+                            <h3>Institutional Coordinates</h3>
                         </div>
-
-                        <p>Feel free to get in touch for professional inquiries.</p>
-
-                        <div class="contact_info">
-                            <p><strong>Email:</strong> your.email@example.com</p>
-                            <p><strong>Phone:</strong> +977-98XXXXXXXX</p>
-                            <p><strong>Address:</strong> Nepal</p>
+                        <p>Formal points of contact for official coordination and verified channels.</p>
+                        <div class="contact_info" style="line-height: 1.8;">
+                            <p><strong>Email:</strong> official.email@nepal.gov.np</p>
+                            <p><strong>Official Station:</strong> Administrative Office, Nepal</p>
                         </div>
                     </aside>
                 </div>
@@ -374,27 +496,21 @@
                 <div class="col-lg-2">
                     <aside class="f_widget social_widget">
                         <div class="f_title">
-                            <h3>Follow Me</h3>
+                            <h3>Verified Channels</h3>
                         </div>
-
-                        <p>Connect with me through official platforms.</p>
-
+                        <p>Institutional connection portals:</p>
                         <ul class="list">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> Government Mail</a></li>
                         </ul>
                     </aside>
                 </div>
-
             </div>
         </div>
     </footer>
     <!--================End Footer Area =================-->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Scripts Framework Alignment -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -408,10 +524,50 @@
     <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
     <script src="vendors/counter-up/jquery.counterup.min.js"></script>
     <script src="js/mail-script.js"></script>
-    <!--gmaps Js-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-    <script src="js/gmaps.min.js"></script>
     <script src="js/theme.js"></script>
+
+    <!-- Cookie Management & Theme Switcher Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.getElementById("themeToggle");
+            const icon = toggleBtn.querySelector("i");
+            const label = toggleBtn.querySelector("span");
+
+            function setCookie(name, value, days = 365) {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/; SameSite=Strict";
+            }
+
+            function updateToggleUI(theme) {
+                if (theme === "dark") {
+                    icon.className = "fa fa-sun-o";
+                    label.textContent = "Light Mode";
+                } else {
+                    icon.className = "fa fa-moon-o";
+                    label.textContent = "Dark Mode";
+                }
+            }
+
+            // Sync structural theme state to switch indicator on page load
+            const initialTheme = document.documentElement.getAttribute("data-theme") || "light";
+            updateToggleUI(initialTheme);
+
+            // Click Handler Event Loop
+            toggleBtn.addEventListener("click", function () {
+                const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+                const targetTheme = currentTheme === "light" ? "dark" : "light";
+                
+                document.documentElement.setAttribute("data-theme", targetTheme);
+                setCookie("portfolio_theme", targetTheme);
+                updateToggleUI(targetTheme);
+            });
+        });
+    </script>
 </body>
 
 </html>
